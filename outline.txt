@@ -1,0 +1,4 @@
+Issue that Go won't flush C streams, so you need to call
+https://code.google.com/p/go/issues/detail?id=8808
+If you have a newline
+
