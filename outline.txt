@@ -1,4 +1,32 @@
+include the Redmonk files
+
+
+cgo-hello
+----
 Issue that Go won't flush C streams, so you need to call
 https://code.google.com/p/go/issues/detail?id=8808
+http://stackoverflow.com/questions/1716296/why-does-printf-not-flush-after-the-call-unless-a-newline-is-in-the-format-strin
 If you have a newline
+
+go run main.go
+
+
+cgo-files
+----
+go run doesn't work for some reason, OK.
+go help run
+
+go build
+./cgo-files
+
+cgo-static
+----
+https://github.com/shadowmint/go-static-linking
+
+# Note it doesn't work to just do 
+gcc -c ../cgo-files/adder.c
+ar rvs adder.a adder.o
+rm adder.o
+
+http://stackoverflow.com/questions/18642613/cgo-include-archive-a-file
 
