@@ -1,2 +1,17 @@
+# Taken from: http://stackoverflow.com/questions/5711120/gitignore-without-binary-files
+
+# Ignore all
 *
+
+# Unignore all with extensions
 !*.*
+
+# Unignore all dirs
+!*/
+
+### Above combination will ignore all files without extension ###
+
+# Ignore C/C++ intermediate files
+*.o
+*.a
+*.so
