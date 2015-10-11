@@ -1,12 +1,22 @@
 package main
 
 import "fmt"
+import "unsafe"
 
-// #cgo LDFLAGS: ./adder.a
-// #include "adder.h"
+// #cgo CFLAGS: -I./greetings
+// #cgo LDFLAGS: ./greetings/greetings.a
+// #include <stdlib.h>
+// #include <greetings.h>
 import "C"
 
 func main() {
-	z := C.adder(10, 20)
-	fmt.Printf("Hello from Go: the result was: %v\n", z)
+	fmt.Printf("Hello from Go: get ready for multi-lingual greetings!\n")
+
+	john := C.CString("John")
+	johannes := C.CString("Johannes")
+	C.greet_in_english(john)
+	C.greet_in_german(johannes)
+
+	C.free(unsafe.Pointer(john))
+	C.free(unsafe.Pointer(johannes))
 }

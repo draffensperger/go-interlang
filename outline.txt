@@ -24,9 +24,40 @@ cgo-static
 https://github.com/shadowmint/go-static-linking
 
 # Note it doesn't work to just do 
-gcc -c ../cgo-files/adder.c
-ar rvs adder.a adder.o
+cd greetings
+gcc -c *.c
+ar rs greetings.a *.o
 rm adder.o
 
 http://stackoverflow.com/questions/18642613/cgo-include-archive-a-file
 
+cgo-dynamic
+----
+in this case we are actually doing to do something more complex
+Linear Programming
+do something really simple but with the LPSolve linear solver
+show a cool slide of the linear solver
+
+cpp-cgo-wrapper
+----
+
+show how to inspect a file to see what the symbols are
+
+
+cpp-swig
+----
+use swig for a simple CPP class
+
+bonus: or-tools SWIG ? . I could point people to the GitHub repository
+CLP
+
+go-shared-object
+
+ruby
+python
+java
+
+benchmarks
+
+c native functions only
+go native function
