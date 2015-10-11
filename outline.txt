@@ -1,3 +1,14 @@
+Intro
+Motivation
+Overview, link to GitHub repo
+
+Go through the examples
+
+
+
+
+
+
 include the Redmonk files
 
 
