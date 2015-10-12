@@ -72,3 +72,8 @@ benchmarks
 
 c native functions only
 go native function
+
+
+https://github.com/wangkuiyi/go-cpp/
+
+https://github.com/burke/howto-go-with-cpp

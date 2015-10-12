@@ -3,8 +3,8 @@ package main
 import "fmt"
 import "unsafe"
 
-// #cgo CFLAGS: -I./greetings
-// #cgo LDFLAGS: ./greetings/greetings.a
+// #cgo CFLAGS: -I${SRCDIR}/greetings
+// #cgo LDFLAGS: ${SRCDIR}/greetings/greetings.a
 // #include <stdlib.h>
 // #include <greetings.h>
 import "C"
