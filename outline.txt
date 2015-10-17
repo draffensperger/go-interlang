@@ -77,3 +77,21 @@ go native function
 https://github.com/wangkuiyi/go-cpp/
 
 https://github.com/burke/howto-go-with-cpp
+
+https://github.com/wig/swig/tree/master/Examples/go/simple
+
+https://github.com/swig/swig/tree/master/Examples/go
+
+makefile
+
+base it on that swig example
+
+https://github.com/golang/go/issues/9410
+https://cxwangyi.wordpress.com/2011/03/28/statically-linking-c-code-with-go-code/
+
+http://ttmmhe.blogspot.com/2014/02/c-and-go.html
+
+go to c static
+langs to go dynamic
+benchmarks
+

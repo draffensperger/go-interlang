@@ -1,5 +1,5 @@
-#ifndef WRAP_GREETER_H
-#define WRAP_GREETER_H
+#ifndef WRAP_POINT_H
+#define WRAP_POINT_H
 
 #ifdef __cplusplus
 extern "C" {
