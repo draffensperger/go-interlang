@@ -95,3 +95,10 @@ go to c static
 langs to go dynamic
 benchmarks
 
+http://zacg.github.io/blog/2013/06/06/calling-c-plus-plus-code-from-go-with-swig/
+
+
+http://stackoverflow.com/questions/6125683/call-go-functions-from-c
+https://medium.com/using-go-in-mobile-apps/using-go-in-mobile-apps-part-1-calling-go-functions-from-c-be1ecf7dfbc6
+
+http://stackoverflow.com/questions/15879993/writing-a-ruby-extension-in-go-golang
