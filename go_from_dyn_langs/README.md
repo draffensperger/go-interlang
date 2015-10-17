@@ -60,3 +60,10 @@ http://stackoverflow.com/questions/13443364/how-can-i-use-linux-shared-libraries
 http://stackoverflow.com/questions/1556421/use-jni-instead-of-jna-to-call-native-code
 
 https://github.com/java-native-access/jna
+
+http://stackoverflow.com/questions/8826881/maven-install-on-mac-os-x
+brew install maven
+
+java -cp target/classes:target/dependency/* javatogo.JavaToGo
+
+mvn install && java -cp target/classes:target/dependency/* javatogo.JavaToGo

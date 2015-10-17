@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <jna.version>RELEASE</jna.version>
+  </properties>
+
+
+  <groupId>com.github.draffensperger</groupId>
+  <artifactId>java_to_go</artifactId>
+  <name>java_to_go</name>
+  <version>0.1</version>
+  <description>Java example of calling a shared library in Go</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna</artifactId>
+      <version>${jna.version}</version>
+    </dependency>
+    <!--   <dependency>-->
+      <!--     <groupId>net.java.dev.jna</groupId>-->
+      <!--     <artifactId>jna</artifactId>-->
+      <!--     <version>${jna.version}</version>-->
+      <!--     <classifier>platform</classifier>-->
+      <!--   </dependency>-->
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
