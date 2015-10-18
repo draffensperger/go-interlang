@@ -6,7 +6,7 @@ import (
 )
 
 /*
-// This comment block is interpreted as C code
+// This comment preamble is interpreted as C code
 // See cgo docs: https://golang.org/cmd/cgo/
 #include <stdio.h>
 #include <stdlib.h>
