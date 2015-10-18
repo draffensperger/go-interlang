@@ -2,16 +2,16 @@
 
 Code samples for calls between Go and C/C++ and calling Go from dynamic languages.
 
-## Calls from Go to C
+## Calls from Go to C (`go_to_c` folder)
 
 These examples use [cgo](https://golang.org/cmd/cgo/) to enable calls to C.
 
-- Calling a C snippet in the cgo comment
+- [c_in_comment](https://github.com/draffensperger/go-interlang/blob/master/go_to_c/c_in_comment/main.go): Calling a C snippet in the cgo comment
 - Calling C source files in your Go project folder
 - Calling a C statically-linked library (a `.a` file)
 - Calling a C dynamically-linked library (a `.so` or `.dylib` file)
 
-## Calls from Go to C++
+## Calls from Go to C++ (`go_to_cxx`)
 
 C++ has more complex calling conventions (e.g. function overloading, inheritance, templates) and so it uses [name mangling](https://en.wikipedia.org/wiki/Name_mangling#Name_mangling_in_C.2B.2B) which adds a step when calling it from Go. Below are ways to do it.
 
