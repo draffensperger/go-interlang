@@ -1,6 +1,6 @@
 package main
 
-// #include "wrap_point.hpp"
+// #include "wrap_point.hxx"
 import "C"
 
 import "fmt"

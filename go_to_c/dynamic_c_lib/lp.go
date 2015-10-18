@@ -28,6 +28,7 @@ type LP struct {
 func NewLP(rows, cols int) *LP {
 	l := new(LP)
 	l.ptr = C.make_lp(C.int(rows), C.int(cols))
+	// Free the lp structure in the Go finalizer
 	runtime.SetFinalizer(l, deleteLP)
 	return l
 }
@@ -47,6 +48,7 @@ const (
 )
 
 func (l *LP) AddConstraint(row []float64, ct ConstraintType, rightHand float64) {
+	// Pass a slice as a C array do &slice[0]
 	C.add_constraint(l.ptr, (*C.double)(&row[0]), C.int(ct), C.double(rightHand))
 }
 
