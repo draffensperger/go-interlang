@@ -16,6 +16,7 @@ func main() {
 	defer C.free(unsafe.Pointer(john))
 	johannes := C.CString("Johannes")
 	defer C.free(unsafe.Pointer(johannes))
+
 	C.greet_in_english(john)
 	C.greet_in_german(johannes)
 

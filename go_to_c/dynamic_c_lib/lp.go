@@ -1,22 +1,16 @@
-// Simplified excerpts from golp package for calling LPSolve
-// Full package at: https://github.com/draffensperger/golp
-// LPSolve C library documentation: http://lpsolve.sourceforge.net/5.5/
 package main
 
 /*
-// The "linux" and "darwin" below are platform-based build constraints
+// The "linux" and "darwin" below are platform build constraints
 // See: https://golang.org/pkg/go/build/
 
-// On Linux, assume that lpsolve is extracted to a subdirectory, e.g. via:
-// LP_URL=http://sourceforge.net/projects/lpsolve/files/lpsolve/5.5.2.0/lp_solve_5.5.2.0_dev_ux64.tar.gz
-// mkdir -p lpsolve
-// wget -qO- $LP_URL | tar xvz -C lpsolve
-#cgo linux CFLAGS: -I./lpsolve
-#cgo linux LDFLAGS: -L./lpsolve -llpsolve55 -Wl,-rpath=./lpsolve
-
-// On Mac, assume LPSolve is installed via MacPorts with "port install lpsolve"
+// On Mac, assume LPSolve is installed via MacPorts
 #cgo darwin CFLAGS: -I/opt/local/include/lpsolve
 #cgo darwin LDFLAGS: -L/opt/local/lib -llpsolve55
+
+// On Linux, assume that lpsolve is local directory
+#cgo linux CFLAGS: -I./lpsolve
+#cgo linux LDFLAGS: -L./lpsolve -llpsolve55 -Wl,-rpath=./lpsolve
 
 #include <lp_lib.h>
 */
@@ -39,7 +33,7 @@ func NewLP(rows, cols int) *LP {
 }
 
 func deleteLP(l *LP) {
-	fmt.Println("Go finalizer says: deleting C linear program structure")
+	fmt.Println("Go finalizer says: deleting C linear program")
 	C.delete_lp(l.ptr)
 }
 

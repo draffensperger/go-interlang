@@ -8,8 +8,7 @@ import (
 func main() {
 	solveLinearProgram()
 
-	// Garbage collecting at the end of the program isn't necessary, but this
-	// will illustrate how the Go wrapper finalizer frees the C structure.
+	// Force GC to illustrate finalizer running
 	runtime.GC()
 	runtime.GC()
 	runtime.GC()
