@@ -65,3 +65,7 @@ https://github.com/shazow/gohttplib
 https://groups.google.com/forum/#!topic/golang-nuts/UGYTlQFCGws
 
 https://github.com/fiorix/gocp
+
+sudo vim `$(brew --repository)/Library/Formula/gcc.rb`
+
+gccgo only works on Linux
