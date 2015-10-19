@@ -1,4 +1,10 @@
+
 cd adder
+http://stackoverflow.com/questions/15879993/writing-a-ruby-extension-in-go-golang
+
+
+cd adder
+
 go build -buildmode=c-shared -o libadder.so
 
 Uses Unix domain sockets for communication

@@ -29,3 +29,14 @@ Mixed Integer Linear Programming (MILP) solver.
 
 For more discussion of concepts in this example, see my blog post 
 [Calling a Linear Solver C Library From Go](http://davidraff.com/calling-a-linear-programming-solver-from-go).
+
+## Other links and notes
+
+[golang-nuts: Passing a slice/array pointer between Go/C](https://groups.google.com/forum/#!topic/golang-nuts/DXCIP6pMMN0)
+
+Something I learned by forgetting a \n in printf: 
+[Go doesn't flush C streams on program exit](https://github.com/golang/go/issues/8808),
+and
+[printf doesn't flush unless there is a \n in the format](http://stackoverflow.com/questions/1716296/why-does-printf-not-flush-after-the-call-unless-a-newline-is-in-the-format-string),
+so if you try a printf without \n in your C code called by Go the message won't
+show up.
