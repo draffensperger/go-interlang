@@ -1,5 +1,7 @@
 # Calling from Go to C and back
 
+To run this example run `go build` then `./to_c_and_back`.
+
 This also shows how to get around cgo's inability to call C function pointers:
 by passing the C function pointer to a C function that then calls it.
 
