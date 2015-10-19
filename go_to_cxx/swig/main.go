@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/draffensperger/go-inter-lang-calls/go_to_cpp/swig/point"
+
+	"github.com/draffensperger/go-interlang/go_to_cxx/swig/point"
 )
 
 func main() {
