@@ -9,7 +9,18 @@ import com.sun.jna.Platform;
 public class JavaToGo {
   static GoAdder GO_ADDER;
   static {
-    String lib = "/Users/dave/Dropbox/Programming/golang/src/github.com/draffensperger/go-inter-lang-calls/go_from_dyn_langs/go_adder/libadder.dylib";
+    String os = System.getProperty("os.name").toLowerCase();
+    String libExtension;
+    if (os.contains("mac os")) {
+      libExtension = "dylib";
+    } else if (os.contains("windows")) {
+      libExtension = "dll";
+    } else {
+      libExtension = "so";
+    }
+
+    String pwd = System.getProperty("user.dir");
+    String lib = pwd + "/go_adder/libadder." + libExtension;
     GO_ADDER = (GoAdder) Native.loadLibrary(lib, GoAdder.class);
   }
 
@@ -22,10 +33,4 @@ public class JavaToGo {
     int total = GO_ADDER.Add(30, 12);
     System.out.println("Java says: result is " + total);
   }
-
-  // public static void main(String[] args) {
-  //   System.out.println("Java says: about to call Go ..");
-  //   int total = new JavaToGo().GoAdd(30, 12);
-  //   System.out.println("Java says: result is " + total);
-  // }
 }

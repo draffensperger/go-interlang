@@ -6,4 +6,4 @@ var lib = ffi.Library('go_adder/libadder', {
 
 console.log('Javascript says: about to call Go ..');
 var total = lib.Add(39, 3);
-console.log('Javascript says: got the total as ' + total);
+console.log('Javascript says: result is ' + total);

@@ -13,4 +13,4 @@ lib = cdll.LoadLibrary('go_adder/libadder.' + lib_extension())
 
 print "Python say: about to call Go ..."
 total = lib.Add(40, 2)
-print "Python says: got back total as " + str(total)
+print "Python says: result is " + str(total)
