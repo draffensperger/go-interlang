@@ -4,7 +4,8 @@
 class Point {
 public:
   Point(double x, double y);
-  double distance_to(Point p);
+  ~Point();
+  double distance_to(const Point& p);
 private:
   double x_, y_;
 };
