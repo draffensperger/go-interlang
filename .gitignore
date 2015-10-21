@@ -23,3 +23,6 @@
 
 # Ignore Maven build folder
 target
+
+# Ignore npm modules folder
+node_modules

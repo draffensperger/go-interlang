@@ -7,11 +7,13 @@ Javascript (Node.js) and Java.
 
 - For Python, it probably already has [ctypes](https://docs.python.org/2/library/ctypes.html) installed
 - For Ruby, `gem install ffi`
-- For Javascript, `npm install ffi -g`
+- For Javascript, `npm install ffi`
 - For Java, install [Maven](https://maven.apache.org/), 
-  then `make -C java_to_go` (or `cd java_to_go` then `mvn install` and `cd ..`). 
+  then `mvn -f java_to_go/pom.xml install` (or `cd java_to_go` then `mvn install` and `cd ..`). 
   That will install [JNA](https://github.com/java-native-access/jna) and compile
   the Java source.
+
+To install all the dependencies use `./install_ffi_deps./sh`
 
 ## Running the examples
 

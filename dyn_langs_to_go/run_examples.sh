@@ -12,7 +12,7 @@ echo
 echo '---- Node.js ----'
 # Use the global path, so we can do "npm install ffi -g" and avoid creating a
 # local node_modules folder.
-NODE_PATH=`npm config get prefix`/lib/node_modules node nodejs_to_go.js
+ node nodejs_to_go.js
 echo
 
 echo '---- Java ----'
