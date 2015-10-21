@@ -19,6 +19,7 @@
 *.a
 *.so
 *.dylib
+*.out
 
 # Ignore Maven build folder
 target

@@ -28,5 +28,5 @@ func solveLinearProgram() {
 	fmt.Println("\nGo says results are: ")
 	fmt.Printf("Plant %.3f acres of barley\n", vars[0])
 	fmt.Printf("And  %.3f acres of wheat\n", vars[1])
-	fmt.Printf("For optimal profit of $%.2f\n\n", lp.Objective())
+	fmt.Printf("For optimal profit of $%.2f\n", lp.Objective())
 }

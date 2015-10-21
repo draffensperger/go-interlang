@@ -1,6 +1,18 @@
 # Calling C++ from Go using SWIG
 
-Many Unix systems include SWIG, for On Mac OS X, run `brew install swig`.
+First you'll need to install [swig](swig.org) if it's not already installed.
+For On Mac OS X, run `brew install swig`. 
+
+To install swig 3.0.7 (which works for Go 1.5) on Ubuntu:
+
+```
+sudo apt-get install libpcre3 libpcre3-dev
+curl -L downloads.sourceforge.net/swig/swig-3.0.7.tar.gz | tar xvz
+cd swig-3.0.7
+./configure && make && sudo make install
+cd ..
+rm -rf swig-3.0.7
+```
 
 To run the example, simply run `go build` which takes care of calling SWIG, and
 then run the program with `./swig`.

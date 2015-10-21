@@ -8,7 +8,7 @@ c_static_lib:
 	rm -rf *.o
 
 go_executable:
-	go build -o go_to_c_static
+	go build -o static_c_lib
 
 clean:
-	rm -rf *.o *.a
+	rm -rf *.o *.a static_c_lib
