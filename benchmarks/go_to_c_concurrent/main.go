@@ -1,5 +1,7 @@
 package main
 
+// #include "harmonic_range.h"
+import "C"
 import (
 	"fmt"
 	"os"
@@ -8,26 +10,12 @@ import (
 	"sync"
 )
 
-func addHarmonic(totalSoFar float64, i int) float64 {
-	return totalSoFar + 1.0/float64(i)
-}
-
-func harmonicRange(start, end int) float64 {
-	sum := 0.0
-	for i := start; i <= end; i++ {
-		sum = addHarmonic(sum, i)
-	}
-	return sum
-}
-
-var partialSums []float64
+var partialSums []C.double
 var wg sync.WaitGroup
 
 func calcPartialSum(goroutine, start, end int) {
 	defer wg.Done()
-	sum := harmonicRange(start, end)
-	partialSums[goroutine] = sum
-	// fmt.Printf("goroutine %v for n=%v..%v got %v\n", goroutine, start, end, sum)
+	partialSums[goroutine] = C.harmonic_range(C.int(start), C.int(end))
 }
 
 func main() {
@@ -36,12 +24,12 @@ func main() {
 	if err != nil {
 		goroutines = runtime.NumCPU()
 	}
-	fmt.Printf("\n\nGo with %v goroutines and GOMAXPROCS=%v:\n", goroutines,
+	fmt.Printf("\n\nGo wth %v goroutines calling C and GOMAXPROCS=%v:\n", goroutines,
 		os.Getenv("GOMAXPROCS"))
 	fmt.Printf("Sum for n=1..%v of 1/n =\n", n)
 
 	wg.Add(goroutines)
-	partialSums = make([]float64, goroutines)
+	partialSums = make([]C.double, goroutines)
 	rangeLen := n / goroutines
 	for i := 0; i < goroutines; i++ {
 		start := i*rangeLen + 1
@@ -49,7 +37,7 @@ func main() {
 		go calcPartialSum(i, start, end)
 	}
 	wg.Wait()
-	sum := 0.0
+	sum := C.double(0.0)
 	for i := 0; i < goroutines; i++ {
 		sum += partialSums[i]
 	}

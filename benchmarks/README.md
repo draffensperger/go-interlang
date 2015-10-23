@@ -1,18 +1,9 @@
 examples still to do:
 
 ruby to go 1 http
-ruby to go n http's
-
-# should be fast/slow
-go concurrent x 4 gomaxprocs
-go concurrent x 1 gomaxprocs
+ruby to go 1 http's
 
 # wonder if this shows that c routines can count as syscalls
-go concurrent call c x 1 gomaxprocs
-go concurrent call c x 4 gomaxprocs
-
-go sleepy routines concurrency
-go sleepy c routines concurrency
 # shows that go is not stuck in a sleepy c routine
 
 http://stackoverflow.com/questions/14818084/what-is-the-proper-include-for-the-function-sleep-in-c
