@@ -6,14 +6,15 @@ import (
 	"strconv"
 )
 
-// calcualte sum of 1 .. n = n(n + 1) / 2
 func main() {
+	fmt.Println("Go only: n(n+1)/2 the long way..")
 	var n int
 	var err error
 	if len(os.Args) > 1 {
 		n, err = strconv.Atoi(os.Args[1])
 		if err != nil {
-			fmt.Printf("Must enter int for N for sum of 1 .. N")
+			fmt.Println("Must enter int for N for sum of 1 .. N")
+			return
 		}
 	} else {
 		n = 100
