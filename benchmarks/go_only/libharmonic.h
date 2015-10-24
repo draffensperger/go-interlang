@@ -50,9 +50,9 @@ extern "C" {
 #endif
 
 
-extern double AddHarmonic(double p0, int p1);
+extern double AddHarmonic(double p0, long int p1);
 
-extern double HarmonicSum(int p0);
+extern double HarmonicSum(long int p0);
 
 #ifdef __cplusplus
 }

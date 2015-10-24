@@ -6,5 +6,5 @@ else
 endif
 
 all:
-	go build -o mai
+	go build -o main
 	go build -o libharmonic$(DYLIB_EXT) -buildmode=c-shared

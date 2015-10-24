@@ -8,6 +8,29 @@ ruby to go 1 http's
 
 http://stackoverflow.com/questions/14818084/what-is-the-proper-include-for-the-function-sleep-in-c
 
+go to c calls max cost:
+(60+56)/800000000
+= 1.45e-7
+600 cycles
+
+
+1/4e9 is time for one cycle
+
+145 nanoseconds at the most
+
+
+millisecond e-3
+microsecond e-6
+nanosecond e-9
+
+14.5 e-8
+K e3
+M e6
+G e9
+4.0 Ghz
+
+
+
 N=4000000000
 
 N=400000000

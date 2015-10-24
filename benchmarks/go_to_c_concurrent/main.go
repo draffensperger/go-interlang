@@ -15,7 +15,7 @@ var wg sync.WaitGroup
 
 func calcPartialSum(goroutine, start, end int) {
 	defer wg.Done()
-	partialSums[goroutine] = C.harmonic_range(C.int(start), C.int(end))
+	partialSums[goroutine] = C.harmonic_range(C.long(start), C.long(end))
 }
 
 func main() {
