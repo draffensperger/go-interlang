@@ -83,3 +83,5 @@ http://grokbase.com/t/gg/golang-nuts/12a9ezsvg3/go-nuts-c-goroutines-abysmal-per
 http://osdir.com/ml/go-language-discuss/2013-08/msg03029.html
 
 http://nathanleclaire.com/blog/2014/02/15/how-to-wait-for-all-goroutines-to-finish-executing-before-continuing/
+
+https://groups.google.com/forum/#!topic/golang-nuts/RTtMsgZi88Q

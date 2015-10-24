@@ -60,41 +60,41 @@ Output of `./ruby_to_go.sh`:
 C only:
 Sum for n=1..80000000 of 1/n =
 18.774752863787992
-real    0m0.300s
-user    0m0.296s
-sys     0m0.001s
+real    0m0.304s
+user    0m0.300s
+sys     0m0.002s
 
 
 Go only:
 Sum for n=1..80000000 of 1/n =
 18.77475286378799
-real    0m0.571s
-user    0m0.562s
-sys     0m0.006s
+real    0m0.553s
+user    0m0.547s
+sys     0m0.005s
 
 
 Ruby only:
 Sum for n=1..80000000 of 1/n =
 18.77475286378799
-real    0m3.839s
-user    0m3.801s
-sys     0m0.032s
+real    0m5.453s
+user    0m5.421s
+sys     0m0.027s
 
 
 Ruby with 1 time Go HarmonicSum call:
 Sum for n=1..80000000 of 1/n =
 18.77475286378799
-real    0m0.674s
-user    0m0.633s
-sys     0m0.036s
+real    0m0.662s
+user    0m0.623s
+sys     0m0.035s
 
 
 Ruby with n times Go AddHarmonic calls:
 Sum for n=1..80000000 of 1/n =
 18.77475286378799
-real    2m7.797s
-user    1m17.421s
-sys     0m50.121s
+real    2m0.839s
+user    1m12.624s
+sys     0m48.176s
 ```
 
 ## Concurrency benchmarks
@@ -212,49 +212,57 @@ sys     0m0.082s
 
 
 C only:
-Sum for n=1..10000 of 1/n =
-9.787606036044348
+Sum for n=1..16000 of 1/n =
+10.257590915797937
 real    0m0.003s
 user    0m0.001s
 sys     0m0.001s
 
 
 Go only:
-Sum for n=1..10000 of 1/n =
-9.787606036044348
+Sum for n=1..16000 of 1/n =
+10.257590915797937
 real    0m0.005s
 user    0m0.001s
 sys     0m0.003s
 
 
 Ruby only:
-Sum for n=1..10000 of 1/n =
-9.787606036044348
-real    0m0.073s
+Sum for n=1..16000 of 1/n =
+10.257590915797937
+real    0m0.070s
 user    0m0.042s
-sys     0m0.027s
+sys     0m0.025s
 
 
 Ruby with n times Go AddHarmonic calls:
-Sum for n=1..10000 of 1/n =
-9.787606036044348
-real    0m0.146s
-user    0m0.099s
-sys     0m0.041s
+Sum for n=1..16000 of 1/n =
+10.257590915797937
+real    0m0.155s
+user    0m0.106s
+sys     0m0.045s
+
+
+Go with n times C add_harmonic calls:
+Sum for n=1..16000 of 1/n =
+10.257590915797937
+real    0m0.007s
+user    0m0.003s
+sys     0m0.003s
 
 
 Go with n times HTTP calls:
-Sum for n=1..10000 of 1/n =
-9.787606036044348
-real    0m0.746s
-user    0m0.327s
-sys     0m0.259s
+Sum for n=1..16000 of 1/n =
+10.257590915797937
+real    0m1.181s
+user    0m0.522s
+sys     0m0.398s
 
 
 Ruby with n times HTTP calls:
-Sum for n=1..10000 of 1/n =
-9.787606036044348
-real    0m5.785s
-user    0m1.635s
-sys     0m1.042s
+Sum for n=1..16000 of 1/n =
+10.257590915797937
+real    0m9.424s
+user    0m2.586s
+sys     0m1.660s
 ```
