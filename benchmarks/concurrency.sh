@@ -30,7 +30,7 @@ time GOMAXPROCS=8 go_concurrent/main $N 800000
 
 # GOMAXPROCS=8 go_to_c_concurrent/main 8000000000 800000 &> out.txt
 # Start of out.txt :
-#
+
 # Go wth 800000 goroutines calling C and GOMAXPROCS=8:
 # Sum for n=1..8000000000 of 1/n =
 # runtime/cgo: pthread_create failed: Resource temporarily unavailable

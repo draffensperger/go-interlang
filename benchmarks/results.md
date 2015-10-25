@@ -2,8 +2,8 @@
 
 Results run on a 2015 MacBook Pro with Intel with 2.8 GHz Intel Core i7 (Quad
 Core with hyperthreading, Turbo Boost up to 4.0 Ghz). Running OS X 10.11 El 
-Capitan. C compiler is Apple LLVM version 7.0.0 (clang-700.0.72). Go 1.5. 
-Ruby 2.2.3.
+Capitan. C compiler is Apple LLVM version 7.0.0 (clang-700.0.72). Used Go 1.5
+and Ruby 2.2.3.
 
 ## Go to C call benchmarks
 
@@ -110,97 +110,149 @@ Output of `./concurrency.sh`:
 Go only:
 Sum for n=1..8000000000 of 1/n =
 23.379923043614358
-real    0m55.671s
-user    0m55.576s
-sys     0m0.094s
-size of long: 8
+real    0m56.482s
+user    0m56.253s
+sys     0m0.122s
+
 
 C only:
 Sum for n=1..8000000000 of 1/n =
 23.379923043614358
-real    0m29.448s
-user    0m29.408s
-sys     0m0.024s
+real    0m29.354s
+user    0m29.284s
+sys     0m0.037s
 
 
 Go with 1 goroutines and GOMAXPROCS=1:
 Sum for n=1..8000000000 of 1/n =
 23.379923043614358
-real    0m54.353s
-user    0m54.318s
-sys     0m0.057s
+real    0m55.320s
+user    0m55.204s
+sys     0m0.103s
 
 
 Go wth 1 goroutines calling C and GOMAXPROCS=1:
 Sum for n=1..8000000000 of 1/n =
 23.379923043614358
-real    0m29.437s
-user    0m29.384s
-sys     0m0.031s
+real    0m29.568s
+user    0m29.463s
+sys     0m0.055s
 
 
 Go with 8 goroutines and GOMAXPROCS=1:
 Sum for n=1..8000000000 of 1/n =
 23.379923043590928
-real    0m55.073s
-user    0m54.942s
-sys     0m0.112s
+real    0m55.868s
+user    0m55.725s
+sys     0m0.134s
 
 
 Go wth 8 goroutines calling C and GOMAXPROCS=1:
 Sum for n=1..8000000000 of 1/n =
 23.379923043590928
-real    0m7.937s
-user    1m1.193s
-sys     0m0.106s
+real    0m7.479s
+user    0m57.470s
+sys     0m0.092s
 
 
 Go with 8 goroutines and GOMAXPROCS=8:
 Sum for n=1..8000000000 of 1/n =
 23.379923043590928
-real    0m8.681s
-user    1m7.312s
-sys     0m0.066s
+real    0m7.858s
+user    1m0.744s
+sys     0m0.091s
 
 
 Go wth 8 goroutines calling C and GOMAXPROCS=8:
 Sum for n=1..8000000000 of 1/n =
 23.379923043590928
-real    0m8.345s
-user    1m3.959s
-sys     0m0.093s
+real    0m7.610s
+user    0m58.936s
+sys     0m0.098s
 
 
 Go with 4 goroutines and GOMAXPROCS=4:
 Sum for n=1..8000000000 of 1/n =
 23.379923043595255
-real    0m15.340s
-user    1m1.270s
-sys     0m0.040s
+real    0m14.466s
+user    0m57.521s
+sys     0m0.116s
 
 
 Go wth 4 goroutines calling C and GOMAXPROCS=4:
 Sum for n=1..8000000000 of 1/n =
 23.379923043595255
-real    0m8.674s
-user    0m34.459s
-sys     0m0.027s
+real    0m8.057s
+user    0m31.979s
+sys     0m0.066s
 
 
 Go with 1 goroutines and GOMAXPROCS=8:
 Sum for n=1..8000000000 of 1/n =
 23.379923043614358
-real    0m56.440s
-user    0m56.278s
-sys     0m0.128s
+real    0m56.975s
+user    0m56.851s
+sys     0m0.115s
 
 
 Go wth 1 goroutines calling C and GOMAXPROCS=8:
 Sum for n=1..8000000000 of 1/n =
 23.379923043614358
-real    0m31.438s
-user    0m31.270s
-sys     0m0.082s
+real    0m29.049s
+user    0m29.005s
+sys     0m0.028s
+
+
+Go with 80000 goroutines and GOMAXPROCS=8:
+Sum for n=1..8000000000 of 1/n =
+23.37992304358969
+real    0m7.633s
+user    0m59.654s
+sys     0m0.107s
+
+
+Go wth 80000 goroutines calling C and GOMAXPROCS=8:
+Sum for n=1..8000000000 of 1/n =
+23.37992304358969
+real    0m7.492s
+user    0m58.981s
+sys     0m0.199s
+
+
+Go with 800000 goroutines and GOMAXPROCS=8:
+Sum for n=1..8000000000 of 1/n =
+23.37992304358886
+real    0m9.613s
+user    1m5.301s
+sys     0m0.897s
+
+Go wth 800000 goroutines calling C and GOMAXPROCS=8:
+Sum for n=1..8000000000 of 1/n =
+runtime/cgo: pthread_create failed: Resource temporarily unavailable
+SIGABRT: abort
+PC=0x7fff8791d0ae m=2
+
+goroutine 0 [idle]:
+
+goroutine 1 [runnable]:
+sync.(*WaitGroup).Wait(0x4192fd0)
+  /usr/local/go/src/sync/waitgroup.go:99
+main.main()
+  /Users/dave/Dropbox/Programming/golang/src/github.com/draffensperger/go-interlang/benchmarks/go_to_c_concurrent/main.go:39 +0x41c
+
+goroutine 17 [syscall, locked to thread]:
+runtime.goexit()
+  /usr/local/go/src/runtime/asm_amd64.s:1696 +0x1
+
+goroutine 138214 [runnable, locked to thread]:
+main._Cfunc_harmonic_range(0x5252d441, 0x5252fb50, 0x3ede5e2cc45e113a)
+  github.com/draffensperger/go-interlang/benchmarks/go_to_c_concurrent/_obj/_cgo_gotypes.go:41 +0x3a
+main.calcPartialSum(0x21b84, 0x5252d441, 0x5252fb50)
+  /Users/dave/Dropbox/Programming/golang/src/github.com/draffensperger/go-interlang/benchmarks/go_to_c_concurrent/main.go:18 +0x58
+created by main.main
+  /Users/dave/Dropbox/Programming/golang/src/github.com/draffensperger/go-interlang/benchmarks/go_to_c_concurrent/main.go:37 +0x3f5
+
+... many more goroutines printing status, aborted output ...
 ```
 
 ## HTTP call benchmarks
