@@ -11,8 +11,9 @@ For a more general comparison of language performance, see
 The raw results from runs of the benchmarks on my machine in
 [results.md](https://github.com/draffensperger/go-interlang/blob/master/benchmarks/results.md).
 
-
 http://stackoverflow.com/questions/28354141/c-code-and-goroutine-scheduling
+
+https://groups.google.com/forum/#!topic/golang-nuts/RTtMsgZi88Q
 
 ## Go to C call cost
 
@@ -41,21 +42,6 @@ G e9
 
 ## Ruby to Go call cost
 
-
 ## HTTP call cost
 
 ## Concurrency implications
-
-
-examples still to do:
-
-ruby to go 1 http
-ruby to go 1 http's
-
-# wonder if this shows that c routines can count as syscalls
-# shows that go is not stuck in a sleepy c routine
-
-# concurrency
-go pausing number server
-c socket server fetcher w/ go routines
-go socket server fetcher w/ go routiens

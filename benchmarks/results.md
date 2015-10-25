@@ -95,6 +95,14 @@ Sum for n=1..80000000 of 1/n =
 real    2m0.839s
 user    1m12.624s
 sys     0m48.176s
+
+
+Ruby to Go no-op FFI call benchmark:
+       user     system      total        real
+  48.200000  30.660000  78.860000 ( 78.977828)
+Ruby function call benchmark:
+       user     system      total        real
+   2.830000   0.010000   2.840000 (  2.839761)
 ```
 
 ## Concurrency benchmarks
