@@ -1,6 +1,6 @@
 #ifndef ADDER_H
 #define ADDER_H
 
-void add(int x, int y, void (*result_callback)(int));
+void add_and_give_go_total(int x, int y);
 
 #endif

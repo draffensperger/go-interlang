@@ -26,3 +26,6 @@ target
 
 # Ignore npm modules folder
 node_modules
+
+# Ignore Vim saved sessions
+Session.vim

@@ -13,7 +13,10 @@ The raw results from runs of the benchmarks on my machine in
 
 http://stackoverflow.com/questions/28354141/c-code-and-goroutine-scheduling
 
-https://groups.google.com/forum/#!topic/golang-nuts/RTtMsgZi88Q
+Two great links on the performance and concurrency implications of Go to C 
+calls are a golang-nuts thread
+[What is the overhead of calling a C function from Go?](https://groups.google.com/forum/#!topic/golang-nuts/RTtMsgZi88Q) and a Stack Overflow question
+[C code and goroutine scheduling](http://stackoverflow.com/questions/28354141/c-code-and-goroutine-scheduling).
 
 ## Go to C call cost
 
@@ -29,7 +32,6 @@ go to c calls max cost:
 A direct benchmark via the `go_to_c_no_op` test got the cost of a Go to C call
 as around 143 ns/op which is very similar.
 
-
 millisecond e-3
 microsecond e-6
 nanosecond e-9
@@ -42,6 +44,6 @@ G e9
 
 ## Ruby to Go call cost
 
-## HTTP call cost
-
 ## Concurrency implications
+
+## HTTP call cost

@@ -1,7 +1,7 @@
 package main
 
 /*
-// The "linux" and "darwin" below are platform build constraints
+// "linux" and "darwin" below are build constraints
 // See: https://golang.org/pkg/go/build/
 
 // On Mac, assume LPSolve is installed via MacPorts

@@ -1,10 +1,10 @@
 #include "adder.h"
 #include <stdio.h>
 
-void add(int x, int y, void (*result_callback)(int)) {
-  printf("C says: adding %i and %i\n", x, y);
-  int total = x + y;
+// _cgo_export.h is auto-generated and has Go //export funcs
+#include "_cgo_export.h"
 
-  // Call function pointer
-  result_callback(total);
+void add_and_give_go_total(int x, int y) {
+  printf("C says: adding %i and %i, calling Go with total\n", x, y);
+  GiveGoTotal(x + y);
 }

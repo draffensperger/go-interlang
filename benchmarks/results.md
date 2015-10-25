@@ -5,7 +5,9 @@ Core with hyperthreading, Turbo Boost up to 4.0 Ghz). Running OS X 10.11 El
 Capitan. C compiler is Apple LLVM version 7.0.0 (clang-700.0.72). Used Go 1.5
 and Ruby 2.2.3.
 
-## Go to C call benchmarks
+## Harmonic series benchmarks
+
+### Go to C call benchmarks
 
 Output of `./go_to_c.sh`:
 
@@ -47,7 +49,7 @@ user    1m56.312s
 sys     0m0.198s
 ```
 
-## Go to Ruby call benchmarks
+### Go to Ruby call benchmarks
 
 Output of `./ruby_to_go.sh`:
 
@@ -105,7 +107,7 @@ Ruby function call benchmark:
    2.830000   0.010000   2.840000 (  2.839761)
 ```
 
-## Concurrency benchmarks
+### Concurrency benchmarks
 
 Output of `./concurrency.sh`:
 
@@ -263,7 +265,7 @@ created by main.main
 ... many more goroutines printing status, aborted output ...
 ```
 
-## HTTP call benchmarks
+### HTTP call benchmarks
 
 ```
 =======================================
