@@ -1,6 +1,10 @@
 # Go interlanguage call examples
 
-Calls between Go and C/C++ and calling Go from dynamic languages.
+Examples of calls between Go and C/C++ and calling Go from dynamic languages.
+
+The examples are designed to work on Mac and Linux. If you're using Windows,
+feel free to reach out to me to request updates for examples that don't work
+correctly.
 
 ## Calls from Go to C (`go_to_c` folder)
 
@@ -22,20 +26,28 @@ C++ has more complex calling conventions (e.g. function overloading, inheritance
 
 - Calling from Go to C and back again: [to_c_and_back](https://github.com/draffensperger/go-interlang/tree/master/go_from_c/to_c_and_back)
 - Passing a Go func as function pointer callback to C: [callbacks](https://github.com/draffensperger/go-interlang/tree/master/go_from_c/callbacks)
-- Calling a Go static library with `buildmode=c-archive`: [static_go_lib](https://github.com/draffensperger/go-interlang/tree/master/c_to_go/static_go_lib)
+- Calling a Go static library with `buildmode=c-archive` from C: [static_go_lib](https://github.com/draffensperger/go-interlang/tree/master/c_to_go/static_go_lib)
+- Calling a Go dynamic lib from C++ [cxx_to_go_dyn_lib](https://github.com/draffensperger/go-interlang/tree/master/c_to_go/cxx_to_go_dyn_lib)
 - Calling Go from C using [gccgo](https://golang.org/doc/install/gccgo)
-- You can also call from C/C++ to a Go dynamically-linked library (same concept as dynamic langs below)
 
-## Calls from Python/Node.js/Ruby/Java to Go
+## Calls from Python/Node.js/Ruby/Java to Go (`dyn_langs_to_go` folder)
 
 Go now allows building a C-compatible dynamically-linked library with `buildmode=c-shared`. That allows any language that can call C dynamic libraries to call Go.
 
-- Call from Python via [ctypes](https://docs.python.org/2/library/ctypes.html): 
-- Call from Node.js via [ffi](https://github.com/node-ffi/node-ffi) npm module
-- Call from Ruby via [ffi](https://github.com/ffi/ffi) gem
-- Call from Java via [JNA](https://github.com/java-native-access/jna)
+- Call from Python via [ctypes](https://docs.python.org/2/library/ctypes.html):
+  [python_to_go.py](https://github.com/draffensperger/go-interlang/blob/master/dyn_langs_to_go/python_to_go.py)
+- Call from Node.js via [ffi](https://github.com/node-ffi/node-ffi) npm module:
+  [nodejs_to_go.js](https://github.com/draffensperger/go-interlang/blob/master/dyn_langs_to_go/nodejs_to_go.js)
+- Call from Ruby via [ffi](https://github.com/ffi/ffi) gem: [ruby_to_go.rb](https://github.com/draffensperger/go-interlang/blob/master/dyn_langs_to_go/ruby_to_go.rb)
+- Call from Java via [JNA](https://github.com/java-native-access/jna): [JavaToGo.java](https://github.com/draffensperger/go-interlang/blob/master/dyn_langs_to_go/java_to_go/src/main/java/javatogo/JavaToGo.java)
 
-# Helpful links
+# Cross-language call benchmarks
+
+There is a cost to calling between languages a Go to C call is about 50x slower
+than a pure Go call and a Ruby FFI call is about 30x slower than a pure Ruby
+call. For more details, see the [benchmarks](https://github.com/draffensperger/go-interlang/tree/master/benchmarks) section.
+
+# Helpful Links
 
 Cgo documentation: [golang.og/cmd/cgo/](https://golang.org/cmd/cgo/)
 

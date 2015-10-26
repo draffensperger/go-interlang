@@ -15,38 +15,46 @@ Output of `./go_to_c.sh`:
 =======================================
 --- Go to C interlang call cost ---
 =======================================
-size of long: 8
+
 
 C only:
 Sum for n=1..800000000 of 1/n =
 21.077337951159535
-real    0m2.921s
-user    0m2.916s
+real    0m2.928s
+user    0m2.917s
 sys     0m0.003s
 
 
 Go only:
 Sum for n=1..800000000 of 1/n =
 21.077337951159535
-real    0m5.422s
-user    0m5.415s
-sys     0m0.008s
+real    0m5.699s
+user    0m5.665s
+sys     0m0.014s
 
 
 Go with 1 time C harmonic_sum call:
 Sum for n=1..800000000 of 1/n =
 21.077337951159535
-real    0m2.955s
-user    0m2.948s
-sys     0m0.004s
+real    0m2.987s
+user    0m2.937s
+sys     0m0.008s
 
 
 Go with n times C add_harmonic calls:
 Sum for n=1..800000000 of 1/n =
 21.077337951159535
-real    1m56.478s
-user    1m56.312s
-sys     0m0.198s
+real    1m55.440s
+user    1m55.221s
+sys     0m0.247s
+
+
+Benchmarking Go to C no-op calls vs. Go no-op calls
+testing: warning: no tests to run
+PASS
+BenchmarkGoToCNoOp-8    10000000               154 ns/op
+BenchmarkGoOnlyNoOp-8   500000000                3.18 ns/op
+ok      github.com/draffensperger/go-interlang/benchmarks/go_to_c_no_op 3.639s
 ```
 
 ### Go to Ruby call benchmarks
