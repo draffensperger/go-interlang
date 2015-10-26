@@ -5,6 +5,6 @@
 #include "_cgo_export.h"
 
 void add_and_give_go_total(int x, int y) {
-  printf("C says: adding %i and %i, calling Go with total\n", x, y);
+  printf("C says: adding %i and %i, giving Go total\n", x, y);
   GiveGoTotal(x + y);
 }

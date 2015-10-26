@@ -25,12 +25,12 @@ public class JavaToGo {
   }
 
   public interface GoAdder extends Library {
-    int Add(int x, int y);
+    long Add(long x, long y);
   }
 
   public static void main(String[] args) {
     System.out.println("Java says: about to call Go ..");
-    int total = GO_ADDER.Add(30, 12);
+    long total = GO_ADDER.Add(30, 12);
     System.out.println("Java says: result is " + total);
   }
 }

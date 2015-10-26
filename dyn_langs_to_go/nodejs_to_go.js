@@ -1,7 +1,7 @@
 var ffi = require('ffi');
 
 var lib = ffi.Library('go_adder/libadder', {
-  'Add': [ 'int', [ 'int', 'int' ] ]
+  'Add': [ 'long', [ 'long', 'long' ] ]
 });
 
 console.log('JavaScript says: about to call Go ..');

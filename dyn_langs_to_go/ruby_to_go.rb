@@ -4,7 +4,7 @@ module GoAdder
   extend FFI::Library
   ext = FFI::Platform::LIBSUFFIX
   ffi_lib "./go_adder/libadder.#{ext}"
-  attach_function :Add, [:int, :int], :int
+  attach_function :Add, [:long, :long], :long
 end
 
 puts "Ruby says: about to call Go ..."

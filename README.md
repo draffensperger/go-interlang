@@ -21,6 +21,7 @@ C++ has more complex calling conventions (e.g. function overloading, inheritance
 ## Calls from C/C++ to Go (`c_to_go` folder)
 
 - Calling from Go to C and back again: [to_c_and_back](https://github.com/draffensperger/go-interlang/tree/master/go_from_c/to_c_and_back)
+- Passing a Go func as function pointer callback to C: [callbacks](https://github.com/draffensperger/go-interlang/tree/master/go_from_c/callbacks)
 - Calling a Go static library with `buildmode=c-archive`: [static_go_lib](https://github.com/draffensperger/go-interlang/tree/master/c_to_go/static_go_lib)
 - Calling Go from C using [gccgo](https://golang.org/doc/install/gccgo)
 - You can also call from C/C++ to a Go dynamically-linked library (same concept as dynamic langs below)
@@ -38,15 +39,15 @@ Go now allows building a C-compatible dynamically-linked library with `buildmode
 
 Cgo documentation: [golang.og/cmd/cgo/](https://golang.org/cmd/cgo/)
 
-`go` command documentation (especially `go build` and "Calling between Go and C"): 
+Documentation for `go` command (see especially `go build` section and "Calling between Go and C"): 
 [golang.org/cmd/go/](https://golang.org/cmd/go/)
 
 SWIG Documentation: [swig.org](http://swig.org/)
 
-SWIG Go examples: (github.com/swig/swig/tree/master/Examples/go)[https://github.com/swig/swig/tree/master/Examples/go]
+SWIG Go examples: [github.com/swig/swig/tree/master/Examples/go](https://github.com/swig/swig/tree/master/Examples/go)
 
 Gccgo documentation: [golang.org/doc/install/gccgo](https://golang.org/doc/install/gccgo)
 
 # License
 
-[MIT Licensed](http://opensource.org/licenses/MIT).
+The code in this repo is [MIT Licensed](http://opensource.org/licenses/MIT).

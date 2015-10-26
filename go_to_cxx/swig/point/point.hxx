@@ -1,5 +1,5 @@
-#ifndef POINT_H
-#define POINT_H
+#ifndef POINT_HXX
+#define POINT_HXX
 
 class Point {
 public:

@@ -5,15 +5,6 @@ import (
 	"runtime"
 )
 
-func main() {
-	solveLinearProgram()
-
-	// Force GC to illustrate finalizer running
-	runtime.GC()
-	runtime.GC()
-	runtime.GC()
-}
-
 func solveLinearProgram() {
 	lp := NewLP(0, 2)
 	lp.AddConstraint([]float64{0.0, 110.0, 30.0}, LE, 4000.0)
@@ -29,4 +20,13 @@ func solveLinearProgram() {
 	fmt.Printf("Plant %.3f acres of barley\n", vars[0])
 	fmt.Printf("And  %.3f acres of wheat\n", vars[1])
 	fmt.Printf("For optimal profit of $%.2f\n", lp.Objective())
+}
+
+func main() {
+	solveLinearProgram()
+
+	// Force GC to illustrate finalizer running
+	runtime.GC()
+	runtime.GC()
+	runtime.GC()
 }
