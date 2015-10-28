@@ -47,9 +47,12 @@ const (
 	EQ        // EQ == 3
 )
 
-func (l *LP) AddConstraint(row []float64, ct ConstraintType, rightHand float64) {
+func (l *LP) AddConstraint(row []float64,
+	ct ConstraintType, rightHand float64) {
+
 	// Pass a slice as a C array do &slice[0]
-	C.add_constraint(l.ptr, (*C.double)(&row[0]), C.int(ct), C.double(rightHand))
+	C.add_constraint(l.ptr, (*C.double)(&row[0]),
+		C.int(ct), C.double(rightHand))
 }
 
 func (l *LP) SetObjFn(row []float64) {
